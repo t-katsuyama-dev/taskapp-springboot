@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Task App</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+<body>
+<div class="container">
+
+    <h1>Task App</h1>
+
+    <form action="/add" method="post">
+        <input type="text" name="title" placeholder="タスク名" required>
+        <button type="submit">追加</button>
+    </form>
+
+    <hr>
+
+    <ul>
+        <li th:each="task : ${tasks}">
+        <span
+                th:text="${task.title}"
+                th:classappend="${task.completed} ? 'task-completed'">
+        </span>
+
+            <form action="/toggle" method="post" style="display:inline;">
+                <input type="hidden" name="id" th:value="${task.id}">
+                <button type="submit"
+                        th:text="${task.completed ? '未完了' : '完了'}">
+                </button>
+            </form>
+
+            <form action="/delete" method="post" style="display:inline;">
+                <input type="hidden" name="id" th:value="${task.id}">
+                <button type="submit">削除</button>
+            </form>
+        </li>
+    </ul>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    margin-bottom: 16px;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 8px;
+}
+
+button {
+    padding: 8px 12px;
+    margin-left: 4px;
+    cursor: pointer;
+}
+
+.task-completed {
+    text-decoration: line-through;
+    color: #888;
+}
